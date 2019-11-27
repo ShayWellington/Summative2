@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>100% Pure Accommodation</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -17,9 +17,9 @@
     <div class="nav">
       <ul class="nav-menu" id="navMenu">
             <li class="nav-menu-home"><a href="#top"><i class="fas nav-fas fa-home"></i></a></li>
-            <li class="nav-menu-places"><a href="#places"><i class="fas nav-fas fa-bed"></i></a></li>
-            <li class="nav-menu-map"><a href="#mapPage"><i class="fas nav-fas fa-map-marker-alt"></i></a></li>
-            <li class="nav-menu-activities"><a href="#activities"><i class="fas nav-fas fa-map-signs"></i></a></li>
+            <li class="nav-menu-places"><a href="#placesSection"><i class="fas nav-fas fa-bed"></i></a></li>
+            <li class="nav-menu-map"><a href="#mapSection"><i class="fas nav-fas fa-map-marker-alt"></i></a></li>
+            <li class="nav-menu-activities"><a href="#activitiesSection"><i class="fas nav-fas fa-map-signs"></i></a></li>
           </ul>
     </div>
 
@@ -46,7 +46,7 @@
         <input type="text" class="form-control" id="formGroupInput3" placeholder="dd-mm-yyyy">
       </div>
       <div class="form-group">
-        <label for="FormControlSelect1">Guests</label>
+        <label class="form-label" for="FormControlSelect1">Guests</label>
         <select class="form-control" id="FormControlSelect1">
           <option>1</option>
           <option>2</option>
@@ -81,13 +81,54 @@
 
       <!-- Places Div -->
 
-      <div class="places" id="places">
+      <div class="places" id="placesSection">
         <h1 class="page-heading"> <i class="fas fa-bed"></i> Places</h1>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="images/wellington-hostel-img-1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">House | Kapiti</h5>
+              <h5 class="card-rating">4.89 <i class="fas fa-star"></i></h5>
+              <p class="card-text">Kapiti Tranquil Getaway</p>
+              <p class="card-text2">$110 NZD per night</p>
+              <a href="#" class="btn card-button btn-primary">View More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="images/wellington-hostel-img-1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">House | Kapiti</h5>
+              <h5 class="card-rating">4.89 <i class="fas fa-star"></i></h5>
+              <p class="card-text">Kapiti Tranquil Getaway</p>
+              <p class="card-text2">$110 NZD per night</p>
+              <a href="#" class="btn card-button btn-primary">View More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="images/wellington-hostel-img-1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">House | Kapiti</h5>
+              <h5 class="card-rating">4.89 <i class="fas fa-star"></i></h5>
+              <p class="card-text">Kapiti Tranquil Getaway</p>
+              <p class="card-text2">$110 NZD per night</p>
+              <a href="#" class="btn card-button btn-primary">View More</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+
       </div>
 
       <!-- Map Div -->
 
-      <div class="map" id="mapPage">
+      <div class="map" id="mapSection">
         <h1 class="page-heading"> <i class="fas fa-map-marker-alt"></i> Map</h1>
         <div id="map">
 
@@ -96,7 +137,7 @@
 
       <!-- Activities Div -->
 
-      <div class="activities" id="activities">
+      <div class="activities" id="activitiesSection">
         <h1 class="page-heading"> <i class="fas fa-map-signs"></i> Activities</h1>
       </div>
 

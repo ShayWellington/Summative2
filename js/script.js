@@ -216,26 +216,28 @@ var locations = [
   },
 ]
 
+//
+
 
 
 // Google Maps
 
 // Accessiing apiKey from config.json
-var myKey = JSON.parse(apiKey);
-console.log(myKey[0].key);
+// var myKey = JSON.parse(apiKey);
+// console.log(myKey[0].key);
 
 // $('#map').show();
 
-var script = document.createElement('script');
-script.src='https://maps.googleapis.com/maps/api/js?key='+ myKey[0].key + '&callback=initMap';
-document.getElementsByTagName('body')[0].appendChild(script);
-function initMap() {
-
-    var wellington = {lat:-41.286461, lng: 174.776230};
-    var auckland = {lat:-36.848461 ,lng: 174.763336};
-    var queenstown = {lat:-45.032700  ,lng: 168.658005};
-
-    var map = new google.maps.Map(
-    document.getElementById('map'), {zoom: 6, center: wellington});
+// var script = document.createElement('script');
+// script.src='https://maps.googleapis.com/maps/api/js?key='+ myKey[0].key + '&callback=initMap';
+// document.getElementsByTagName('body')[0].appendChild(script);
+// function initMap() {
+//
+//     var wellington = {lat:-41.286461, lng: 174.776230};
+//     var auckland = {lat:-36.848461 ,lng: 174.763336};
+//     var queenstown = {lat:-45.032700  ,lng: 168.658005};
+//
+//     var map = new google.maps.Map(
+//     document.getElementById('map'), {zoom: 6, center: wellington});
 
       }

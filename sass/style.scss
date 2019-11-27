@@ -16,6 +16,10 @@
   color: #1C1C1C;
 }
 
+@mixin lightGrey {
+  color: #696969;
+}
+
 @mixin white {
   color: white;
 }
@@ -49,6 +53,7 @@
   width: 40%;
   margin: 5px 0;
   font-size: 18px;
+  @include fontReg
 }
 
 
@@ -184,6 +189,64 @@ body {
   margin: 30px 20px;
 }
 
+// Places Card
+
+.col {
+  width: 25%;
+}
+
+.card {
+  margin: 20px 15px;
+  border-radius: 5px;
+  position: relative;
+  margin: auto;
+}
+
+.card-button {
+  padding: 10px 0;
+  color: white;
+  background-color: #1C1C1C;
+  border-radius: 5px;
+  width: 75%;
+  margin: 5px 0;
+  font-size: 18px;
+  position: relative;
+  left: 13.5%;
+  @include fontReg;
+}
+
+.card-title {
+  @include fontReg;
+  @include lightGrey;
+  font-size: 14px;
+  display: inline;
+}
+
+.card-rating {
+  @include fontReg;
+  @include lightGrey;
+  font-size: 14px;
+  display: inline;
+  float: right;
+}
+
+.card-rating::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.card-text {
+  @include fontReg;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.card-text2 {
+  @include fontReg;
+  font-size: 20px;
+  margin: 10px 0 30px 0;
+}
 
 // Map Div
 
