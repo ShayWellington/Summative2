@@ -8,10 +8,8 @@
 }
 
 // Mixins
-
-@mixin textHeading {
-    font-size: 40px;
-    font-family: 'Open Sans', sans-serif;
+@mixin fontReg {
+  font-family: 'Open Sans', sans-serif;
 }
 
 @mixin darkGrey {
@@ -25,11 +23,12 @@
 // Page Styling
 
 .page-heading {
-  @include textHeading;
+  @include fontReg;
+  font-size: 40px;
   @include darkGrey;
 }
 
-// Images & Icons
+// Images, Icons & Buttons
 
 .logo-image {
   width: 15%;
@@ -42,6 +41,15 @@
   color: white;
 }
 
+.button {
+  padding: 15px 0;
+  color: white;
+  background-color: #1C1C1C;
+  border-radius: 5px;
+  width: 40%;
+  margin: 5px 0;
+  font-size: 18px;
+}
 
 
 // Swiper JS Carousel
@@ -92,7 +100,7 @@ body {
   position: absolute;
   // z-index: -100;
   background-color: #1C1C1C;
-  height: 1000px;
+  height: 100%;
   width: 15%;
 }
 
@@ -117,6 +125,48 @@ body {
       padding-bottom: 20px;
     }
 }
+
+// Accommodation Search Form
+
+.form {
+  position: absolute;
+  z-index: 300;
+  top: 20%;
+  right: 5%;
+  background-color: white;
+  padding: 20px 40px;
+  width: 40%;
+  border-radius: 5px;
+}
+
+.form-heading{
+  @include fontReg;
+  font-size: 30px;
+  padding-right: 25%;
+  margin-bottom: 1em;
+}
+
+.form-label {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  @include fontReg;
+  font-size: 12px;
+  display: block;
+}
+
+.form-control {
+  padding: 10px 10px;
+  margin: 10px 0px;
+  width: 100%;
+  font-size: 18px;
+}
+
+.form-button {
+  position: relative;
+  left: 30%;
+}
+
 
 // Content Div
 

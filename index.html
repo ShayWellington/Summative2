@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>100% Pure Accommodation</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -12,20 +13,52 @@
     <div id="top"></div>
 
     <!-- Left Side Nav Bar Div -->
+
     <div class="nav">
       <ul class="nav-menu" id="navMenu">
             <li class="nav-menu-home"><a href="#top"><i class="fas nav-fas fa-home"></i></a></li>
             <li class="nav-menu-places"><a href="#places"><i class="fas nav-fas fa-bed"></i></a></li>
-            <li class="nav-menu-map"><a href="#map"><i class="fas nav-fas fa-map-marker-alt"></i></a></li>
+            <li class="nav-menu-map"><a href="#mapPage"><i class="fas nav-fas fa-map-marker-alt"></i></a></li>
             <li class="nav-menu-activities"><a href="#activities"><i class="fas nav-fas fa-map-signs"></i></a></li>
           </ul>
     </div>
+
+    <!-- Logo -->
 
     <div class="logo">
       <img class="logo-image" src="images/logo.png" alt="Logo">
     </div>
 
+    <!-- Accommodation Search Form  -->
+
+    <form class="form">
+      <h2 class="form-heading">Search for the perfect accommodation for you.</h2>
+      <div class="form-group">
+        <label for="formGroupInput" class="form-label">Where</label>
+        <input type="text" class="form-control" id="formGroupInput" placeholder="Eg; Wellington, Auckland, Queenstown">
+      </div>
+      <div class="form-group">
+        <label for="formGroupInput2" class="form-label">Check-In</label>
+        <input type="text" class="form-control" id="formGroupInput2" placeholder="dd-mm-yyyy">
+      </div>
+      <div class="form-group">
+        <label for="formGroupInput3" class="form-label">Check-Out</label>
+        <input type="text" class="form-control" id="formGroupInput3" placeholder="dd-mm-yyyy">
+      </div>
+      <div class="form-group">
+        <label for="FormControlSelect1">Guests</label>
+        <select class="form-control" id="FormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+      <button type="button" id="formSubmit" class="button form-button" name="button">Search</button>
+    </form>
+
     <!-- Swiper -->
+
     <div class="swiper-container" >
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img class="swiper-slide-img" src="images/banner1_Whangarei.jpg" alt="Whangarei"></div>
@@ -38,6 +71,7 @@
     </div>
 
     <!-- Nav Bar Background Div -->
+
     <div class="nav-background-container">
       <div class="nav-background">
       </div>
@@ -46,16 +80,22 @@
     <div class="content">
 
       <!-- Places Div -->
+
       <div class="places" id="places">
         <h1 class="page-heading"> <i class="fas fa-bed"></i> Places</h1>
       </div>
 
       <!-- Map Div -->
-      <div class="map" id="map">
+
+      <div class="map" id="mapPage">
         <h1 class="page-heading"> <i class="fas fa-map-marker-alt"></i> Map</h1>
+        <div id="map">
+
+        </div>
       </div>
 
       <!-- Activities Div -->
+
       <div class="activities" id="activities">
         <h1 class="page-heading"> <i class="fas fa-map-signs"></i> Activities</h1>
       </div>
@@ -63,11 +103,12 @@
     </div>
 
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="https://kit.fontawesome.com/69bb8529b7.js" crossorigin="anonymous"></script>
+    <script src="js/config.json"></script>
     <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

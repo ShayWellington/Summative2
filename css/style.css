@@ -5,8 +5,8 @@
   text-decoration: none; }
 
 .page-heading {
-  font-size: 40px;
   font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
   color: #1C1C1C; }
 
 .logo-image {
@@ -17,6 +17,15 @@
 
 .nav-fas {
   color: white; }
+
+.button {
+  padding: 15px 0;
+  color: white;
+  background-color: #1C1C1C;
+  border-radius: 5px;
+  width: 40%;
+  margin: 5px 0;
+  font-size: 18px; }
 
 html, body {
   position: relative;
@@ -57,7 +66,7 @@ body {
 .nav-background {
   position: absolute;
   background-color: #1C1C1C;
-  height: 1000px;
+  height: 100%;
   width: 15%; }
 
 .nav {
@@ -76,6 +85,40 @@ body {
     font-size: 35px;
     margin-bottom: 90%;
     padding-bottom: 20px; }
+
+.form {
+  position: absolute;
+  z-index: 300;
+  top: 20%;
+  right: 5%;
+  background-color: white;
+  padding: 20px 40px;
+  width: 40%;
+  border-radius: 5px; }
+
+.form-heading {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  padding-right: 25%;
+  margin-bottom: 1em; }
+
+.form-label {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  display: block; }
+
+.form-control {
+  padding: 10px 10px;
+  margin: 10px 0px;
+  width: 100%;
+  font-size: 18px; }
+
+.form-button {
+  position: relative;
+  left: 30%; }
 
 .content {
   background-color: pink;
