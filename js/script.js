@@ -1,6 +1,6 @@
 console.log('100% Pure Accommodation');
 
-// Swiper Carousel JS
+// Swiper Carousel JS ----------------------------------------------------------
 
 var swiper = new Swiper('.swiper-container', {
       spaceBetween: 30,
@@ -19,7 +19,7 @@ var swiper = new Swiper('.swiper-container', {
       },
     });
 
-// Locations Array
+// Locations Array -------------------------------------------------------------
 
 var locations = [
   {
@@ -240,7 +240,7 @@ var locations = [
   },
 ]
 
-// Date Picker
+// Date Picker -----------------------------------------------------------------
 
 $("#startDate").datepicker({
 
@@ -274,7 +274,7 @@ function dateDiff() {
   return days;
 };
 
-// // Array
+// Array -----------------------------------------------------------------------
 
 function myArray(){
   document.getElementById('places').innerHTML = '';
@@ -299,7 +299,7 @@ function displayArray(j){
   +      '<h5 class="card-rating">' + locations[j].rating + ' <i class="fas fa-star"></i></h5>'
   +      '<p class="card-text">' + locations[j].name + '</p>'
   +      '<p class="card-text2"> $' + locations[j].costPN + 'NZD per night</p>'
-  +      '<a href="#" class="btn card-button btn-primary">View More</a>'
+  +      '<button type="button" class="btn btn-primary card-button" data-toggle="modal" data-target=".bd-modal">View More</button>'
   +    '</div>'
   +  '</div>'
   +'</div>'
@@ -324,7 +324,7 @@ document.getElementById('calcDate').addEventListener('click',function(){
 
 
 
-//Google Maps
+//Google Maps ------------------------------------------------------------------
 
 // Accessiing apiKey from config.json
 var myKey = JSON.parse(apiKey);

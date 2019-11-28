@@ -14,7 +14,7 @@
   <body>
     <div id="top"></div>
 
-    <!-- Left Side Nav Bar Div -->
+    <!-- Left Side Nav Bar Div ------------------------------------------------>
 
     <div class="nav">
       <ul class="nav-menu" id="navMenu">
@@ -25,36 +25,22 @@
           </ul>
     </div>
 
-    <!-- Logo -->
+    <!-- Logo ----------------------------------------------------------------->
 
     <div class="logo">
       <img class="logo-image" src="images/logo.png" alt="Logo">
     </div>
 
-    <!-- Accommodation Search Form  -->
+    <!-- Accommodation Search Form  ------------------------------------------->
 
     <form class="form">
       <h2 class="form-heading">Search for the perfect accommodation for you.</h2>
-      <div class="form-group">
-        <label for="formGroupInput" class="form-label">Where</label>
-        <input type="text" class="form-control" id="formGroupInput" placeholder="Eg; Wellington, Auckland, Queenstown">
-      </div>
-      <!-- <div class="form-group">
-        <label for="formGroupInput2" class="form-label">Check-In</label>
-        <input type="text" class="form-control" id="formGroupInput2" placeholder="dd-mm-yyyy">
-      </div>
-      <div class="form-group">
-        <label for="formGroupInput3" class="form-label">Check-Out</label>
-        <input type="text" class="form-control" id="formGroupInput3" placeholder="dd-mm-yyyy">
-      </div> -->
       <div class="form-group">
         <div class="dates">
           <label for="formGroupInput2" class="form-label">Check-In</label>
             <input type="text" id="startDate" value="dd-mm-yy" class="form-control">
           <label for="formGroupInput3" class="form-label">Check-Out</label>
             <input type="text" id="endDate" value="dd-mm-yy" class="form-control">
-            <!-- <input type="button" id="calcDate" class="btn btn-sm btn-primary border-0 float-right" value="Filter Results"> -->
-            <!-- ^^ This button id will be taken to the submit button once this works  -->
           </div>
       </div>
       <div class="form-group">
@@ -66,10 +52,10 @@
           <option value="4">4</option>
         </select>
       </div>
-      <button type="button" id="calcDate" class="button form-button" value="Search" >Search</button>
+      <button type="button" id="calcDate" class="button form-button" value="Search"> Search </button>
     </form>
 
-    <!-- Swiper -->
+    <!-- Swiper --------------------------------------------------------------->
 
     <div class="swiper-container" >
       <div class="swiper-wrapper">
@@ -82,7 +68,7 @@
       </div>
     </div>
 
-    <!-- Nav Bar Background Div -->
+    <!-- Nav Bar Background Div ----------------------------------------------->
 
     <div class="nav-background-container">
       <div class="nav-background">
@@ -91,14 +77,57 @@
 
     <div class="content">
 
-      <!-- Places Div -->
+      <!-- Places Div --------------------------------------------------------->
 
       <div class="places" id="placesSection">
         <h1 class="page-heading"> <i class="fas fa-bed"></i> Places</h1>
         <div id="places" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 places-div"></div>
       </div>
 
-      <!-- Map Div -->
+      <!-- Places Modal ------------------------------------------------------->
+
+      <div class="modal fade bd-modal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Kapiti Tranquil Getaway</h5>
+              <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <h6 class="modal-subheading"> House | Kapiti </h6>
+            <h6 class="modal-subheading"> 4.89 <i class="fas fa-star"></i></h6>
+
+            <!-- Modal Carousel ----------------------------------------------->
+
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/wellington-house-img-1.jpg" class="d-block w-100 modal-carousel-img" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/wellington-house-img-2.jpeg" class="d-block w-100 modal-carousel-img" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/wellington-house-img-3.jpg" class="d-block w-100 modal-carousel-img" alt="...">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon carousel-prev" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon carousel-next" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+            ...
+          </div>
+        </div>
+      </div>
+
+      <!-- Map Div ------------------------------------------------------------>
 
       <div class="map" id="mapSection">
         <h1 class="page-heading"> <i class="fas fa-map-marker-alt"></i> Map</h1>
@@ -120,11 +149,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha256-KM512VNnjElC30ehFwehXjx1YCHPiQkOPmqnrWtpccM=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="https://kit.fontawesome.com/69bb8529b7.js" crossorigin="anonymous"></script>
     <!-- <script src="js/config.json"></script> -->
-    <!-- https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyDr8CDj7pXUsYGOPimcLSWIrKE8XV7SH7Q&center=-41.29599922304471,174.77195125471854&zoom=14&format=png&maptype=roadmap&style=feature:administrative.country%7Celement:geometry%7Ccolor:0xffeb3b&style=feature:landscape.man_made%7Ccolor:0xd8e6d4&style=feature:landscape.natural%7Ccolor:0x729052%7Csaturation:-15%7Clightness:30&style=feature:poi%7Ccolor:0x65577c%7Csaturation:-60%7Cweight:0.5&style=feature:poi%7Celement:geometry%7Cvisibility:off&style=feature:road%7Ccolor:0xbec7c2%7Clightness:100%7Cweight:1&style=feature:road.arterial%7Celement:labels%7Cvisibility:off&style=feature:road.highway%7Ccolor:0xe9b96a%7Csaturation:-30%7Clightness:25&style=feature:road.highway%7Celement:labels%7Cvisibility:off&style=feature:road.local%7Ccolor:0xe4bc85%7Clightness:80%7Cvisibility:on%7Cweight:0.5&style=feature:transit%7Ccolor:0xe4c0c3%7Cvisibility:off%7Cweight:0.5&style=feature:water%7Ccolor:0xc2dae0&size=480x360 -->
     <script src="js/script.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr8CDj7pXUsYGOPimcLSWIrKE8XV7SH7Q&callback=initMap"> </script>
 

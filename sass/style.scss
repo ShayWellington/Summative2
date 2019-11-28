@@ -1,4 +1,4 @@
-// CSS Reset
+// CSS Reset -------------------------------------------------------------------
 
 * {
   padding: 0;
@@ -7,7 +7,8 @@
   text-decoration: none;
 }
 
-// Mixins
+// Mixins ----------------------------------------------------------------------
+
 @mixin fontReg {
   font-family: 'Open Sans', sans-serif;
 }
@@ -24,7 +25,7 @@
   color: white;
 }
 
-// Page Styling
+// Page Styling ----------------------------------------------------------------
 
 .page-heading {
   @include fontReg;
@@ -33,7 +34,7 @@
   margin-bottom: 35px;
 }
 
-// Images, Icons & Buttons
+// Images, Icons & Buttons -----------------------------------------------------
 
 .logo-image {
   width: 15%;
@@ -58,7 +59,7 @@
 }
 
 
-// Swiper JS Carousel
+// Swiper JS Carousel ----------------------------------------------------------
 
 html, body {
   position: relative;
@@ -100,7 +101,7 @@ body {
 }
 
 
-// Navigation
+// Navigation ------------------------------------------------------------------
 
 .nav-background {
   position: absolute;
@@ -132,7 +133,7 @@ body {
     }
 }
 
-// Accommodation Search Form
+// Accommodation Search Form ---------------------------------------------------
 
 .form {
   position: absolute;
@@ -180,24 +181,22 @@ body {
   padding-left: 7px;
 }
 
-
-// Content Div
+// Content Div -----------------------------------------------------------------
 
 .content {
-  // background-color: pink;
+  background-color: white;
   width: 85%;
   float: right;
 }
 
-
-// Places Div
+// Places Div ------------------------------------------------------------------
 
 .places {
   // background-color: lightblue;
   margin: 60px 30px;
 }
 
-// Places Card
+// Places Card -----------------------------------------------------------------
 
 .col {
   // width: 25%;
@@ -264,7 +263,59 @@ body {
   object-fit: cover;
 }
 
-// Map Div
+// Modal -----------------------------------------------------------------------
+
+.modal-close {
+  font-size: 50px;
+  font-weight: 300;
+  @include darkGrey;
+  position: absolute;
+  right: 3%;
+  top: 5%;
+}
+
+.modal-header {
+  border-bottom: none;
+  padding-left: 0;
+  padding-bottom: 5px;
+}
+
+.modal-title {
+  @include fontReg;
+  font-size: 25px;
+}
+
+.modal-content {
+  padding: 20px 40px;
+}
+
+.modal-subheading {
+  @include fontReg;
+  @include lightGrey;
+  font-size: 14px;
+}
+
+// Modal Carousel --------------------------------------------------------------
+
+.carousel-inner {
+    margin: 30px 0;
+}
+
+
+.modal-carousel-img {
+  width: 100%;
+  padding: 0 15%;
+  height: 30%;
+  max-height: 280px;
+  overflow: hidden;
+}
+
+.carousel-next{
+  color: pink;
+}
+
+
+// Map Div ---------------------------------------------------------------------
 
 .map {
   // background-color: lightblue;
@@ -278,13 +329,13 @@ body {
   margin: 20px auto;
 }
 
-// Map Styling
+// Map Styling -----------------------------------------------------------------
 
 
 
-// Activities Div
+// Activities Div --------------------------------------------------------------
 
 .activities {
-  background-color: lightblue;
+  // background-color: lightblue;
   margin: 30px 20px;
 }
