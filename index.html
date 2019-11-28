@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>100% Pure Accommodation</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -37,24 +39,34 @@
         <label for="formGroupInput" class="form-label">Where</label>
         <input type="text" class="form-control" id="formGroupInput" placeholder="Eg; Wellington, Auckland, Queenstown">
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="formGroupInput2" class="form-label">Check-In</label>
         <input type="text" class="form-control" id="formGroupInput2" placeholder="dd-mm-yyyy">
       </div>
       <div class="form-group">
         <label for="formGroupInput3" class="form-label">Check-Out</label>
         <input type="text" class="form-control" id="formGroupInput3" placeholder="dd-mm-yyyy">
+      </div> -->
+      <div class="form-group">
+        <div class="dates">
+          <label for="formGroupInput2" class="form-label">Check-In</label>
+            <input type="text" id="startDate" value="dd-mm-yy" class="form-control">
+          <label for="formGroupInput3" class="form-label">Check-Out</label>
+            <input type="text" id="endDate" value="dd-mm-yy" class="form-control">
+            <!-- <input type="button" id="calcDate" class="btn btn-sm btn-primary border-0 float-right" value="Filter Results"> -->
+            <!-- ^^ This button id will be taken to the submit button once this works  -->
+          </div>
       </div>
       <div class="form-group">
-        <label class="form-label" for="FormControlSelect1">Guests</label>
-        <select class="form-control" id="FormControlSelect1">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
+        <label class="form-label" for="people">Guests</label>
+        <select class="form-control" id="people" name="people">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
         </select>
       </div>
-      <button type="button" id="formSubmit" class="button form-button" name="button">Search</button>
+      <button type="button" id="calcDate" class="button form-button" value="Search" >Search</button>
     </form>
 
     <!-- Swiper -->
@@ -83,47 +95,7 @@
 
       <div class="places" id="placesSection">
         <h1 class="page-heading"> <i class="fas fa-bed"></i> Places</h1>
-
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-        <div class="col">
-          <div class="card" style="width: 18rem;">
-            <img src="images/wellington-hostel-img-1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">House | Kapiti</h5>
-              <h5 class="card-rating">4.89 <i class="fas fa-star"></i></h5>
-              <p class="card-text">Kapiti Tranquil Getaway</p>
-              <p class="card-text2">$110 NZD per night</p>
-              <a href="#" class="btn card-button btn-primary">View More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 18rem;">
-            <img src="images/wellington-hostel-img-1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">House | Kapiti</h5>
-              <h5 class="card-rating">4.89 <i class="fas fa-star"></i></h5>
-              <p class="card-text">Kapiti Tranquil Getaway</p>
-              <p class="card-text2">$110 NZD per night</p>
-              <a href="#" class="btn card-button btn-primary">View More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 18rem;">
-            <img src="images/wellington-hostel-img-1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">House | Kapiti</h5>
-              <h5 class="card-rating">4.89 <i class="fas fa-star"></i></h5>
-              <p class="card-text">Kapiti Tranquil Getaway</p>
-              <p class="card-text2">$110 NZD per night</p>
-              <a href="#" class="btn card-button btn-primary">View More</a>
-            </div>
-          </div>
-        </div>
-        </div>
-
-
+        <div id="places" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 places-div"></div>
       </div>
 
       <!-- Map Div -->
@@ -143,13 +115,18 @@
 
     </div>
 
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha256-KM512VNnjElC30ehFwehXjx1YCHPiQkOPmqnrWtpccM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="https://kit.fontawesome.com/69bb8529b7.js" crossorigin="anonymous"></script>
-    <script src="js/config.json"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <!-- <script src="js/config.json"></script> -->
+    <!-- https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyDr8CDj7pXUsYGOPimcLSWIrKE8XV7SH7Q&center=-41.29599922304471,174.77195125471854&zoom=14&format=png&maptype=roadmap&style=feature:administrative.country%7Celement:geometry%7Ccolor:0xffeb3b&style=feature:landscape.man_made%7Ccolor:0xd8e6d4&style=feature:landscape.natural%7Ccolor:0x729052%7Csaturation:-15%7Clightness:30&style=feature:poi%7Ccolor:0x65577c%7Csaturation:-60%7Cweight:0.5&style=feature:poi%7Celement:geometry%7Cvisibility:off&style=feature:road%7Ccolor:0xbec7c2%7Clightness:100%7Cweight:1&style=feature:road.arterial%7Celement:labels%7Cvisibility:off&style=feature:road.highway%7Ccolor:0xe9b96a%7Csaturation:-30%7Clightness:25&style=feature:road.highway%7Celement:labels%7Cvisibility:off&style=feature:road.local%7Ccolor:0xe4bc85%7Clightness:80%7Cvisibility:on%7Cweight:0.5&style=feature:transit%7Ccolor:0xe4c0c3%7Cvisibility:off%7Cweight:0.5&style=feature:water%7Ccolor:0xc2dae0&size=480x360 -->
+    <script src="js/script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr8CDj7pXUsYGOPimcLSWIrKE8XV7SH7Q&callback=initMap"> </script>
+
   </body>
 </html>
