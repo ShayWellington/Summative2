@@ -3,7 +3,7 @@ console.log('100% Pure Accommodation');
 // Swiper Carousel JS ----------------------------------------------------------
 
 var swiper = new Swiper('.swiper-container', {
-      spaceBetween: 30,
+      spaceBetween: 0,
       centeredSlides: true,
       autoplay: {
         delay: 2500,
@@ -287,6 +287,7 @@ function myArray(){
   }
 
 };
+
 myArray();
 
 function displayArray(j){

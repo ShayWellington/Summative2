@@ -28,7 +28,6 @@
 // Page Styling ----------------------------------------------------------------
 
 .page-heading {
-  @include fontReg;
   font-size: 40px;
   @include darkGrey;
   margin-bottom: 35px;
@@ -55,7 +54,17 @@
   width: 40%;
   margin: 5px 0;
   font-size: 18px;
-  @include fontReg
+}
+
+.button-book {
+  padding: 15px 0;
+  color: white;
+  background-color: #363636;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 30px;
+  font-size: 18px;
 }
 
 
@@ -68,7 +77,7 @@ html, body {
 }
 body {
   background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  @include fontReg;
   font-size: 14px;
   color:#000;
   margin: 0;
@@ -147,7 +156,6 @@ body {
 }
 
 .form-heading{
-  @include fontReg;
   font-size: 30px;
   padding-right: 25%;
   margin-bottom: 1em;
@@ -157,7 +165,6 @@ body {
   margin-top: 10px;
   margin-bottom: 0px;
   text-transform: uppercase;
-  @include fontReg;
   font-size: 12px;
   display: block;
 }
@@ -221,18 +228,15 @@ body {
   font-size: 18px;
   position: relative;
   left: 13.5%;
-  @include fontReg;
 }
 
 .card-title {
-  @include fontReg;
   @include lightGrey;
   font-size: 14px;
   display: inline;
 }
 
 .card-rating {
-  @include fontReg;
   @include lightGrey;
   font-size: 14px;
   display: inline;
@@ -246,13 +250,11 @@ body {
 }
 
 .card-text {
-  @include fontReg;
   font-size: 20px;
   margin: 10px 0;
 }
 
 .card-text2 {
-  @include fontReg;
   font-size: 20px;
   margin: 10px 0 30px 0;
 }
@@ -271,7 +273,7 @@ body {
   @include darkGrey;
   position: absolute;
   right: 3%;
-  top: 5%;
+  // top: 5%;
 }
 
 .modal-header {
@@ -280,20 +282,89 @@ body {
   padding-bottom: 5px;
 }
 
-.modal-title {
-  @include fontReg;
-  font-size: 25px;
-}
-
 .modal-content {
   padding: 20px 40px;
 }
 
+.modal-info {
+  width: 90%;
+  margin: auto;
+  padding-top: 15px;
+}
+
+.modal-info-left {
+  border-right: 0.5px solid #696969;
+}
+
+.modal-info-text {
+  margin: 10%;
+}
+
+.modal-title {
+  font-size: 25px;
+}
+
+.modal-heading {
+  font-size: 20px;
+}
+
 .modal-subheading {
-  @include fontReg;
   @include lightGrey;
   font-size: 14px;
+  margin-bottom: 10px;
 }
+
+.modal-info-heading {
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.modal-info-body {
+  @include lightGrey;
+  font-size: 14px;
+  padding-right: 40px;
+}
+
+.modal-book-bold {
+  font-size: 20px;
+  font-weight: bold;
+  display: inline;
+}
+
+.modal-book-body {
+  display: inline;
+  font-size: 18px;
+}
+
+.modal-book-Lbody {
+  @include lightGrey;
+}
+
+.modal-menu-title {
+  @include lightGrey;
+  display: inline;
+  font-size: 16px;
+}
+
+.modal-menu-body {
+  display: inline;
+  font-size: 18px;
+}
+
+.modal-menu-bodyR {
+  display: inline;
+  font-size: 18px;
+  float: right;
+  margin: 0;
+}
+
+.modal-menu-bodyR::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
 
 // Modal Carousel --------------------------------------------------------------
 
@@ -306,7 +377,6 @@ body {
   width: 100%;
   padding: 0 15%;
   height: 30%;
-  max-height: 280px;
   overflow: hidden;
 }
 

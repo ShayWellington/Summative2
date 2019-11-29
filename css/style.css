@@ -5,7 +5,6 @@
   text-decoration: none; }
 
 .page-heading {
-  font-family: 'Open Sans', sans-serif;
   font-size: 40px;
   color: #1C1C1C;
   margin-bottom: 35px; }
@@ -26,8 +25,17 @@
   border-radius: 5px;
   width: 40%;
   margin: 5px 0;
-  font-size: 18px;
-  font-family: 'Open Sans', sans-serif; }
+  font-size: 18px; }
+
+.button-book {
+  padding: 15px 0;
+  color: white;
+  background-color: #363636;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 30px;
+  font-size: 18px; }
 
 html, body {
   position: relative;
@@ -36,7 +44,7 @@ html, body {
 
 body {
   background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -99,7 +107,6 @@ body {
   border-radius: 5px; }
 
 .form-heading {
-  font-family: 'Open Sans', sans-serif;
   font-size: 30px;
   padding-right: 25%;
   margin-bottom: 1em; }
@@ -108,7 +115,6 @@ body {
   margin-top: 10px;
   margin-bottom: 0px;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   display: block; }
 
@@ -155,17 +161,14 @@ body {
   margin: 5px 0;
   font-size: 18px;
   position: relative;
-  left: 13.5%;
-  font-family: 'Open Sans', sans-serif; }
+  left: 13.5%; }
 
 .card-title {
-  font-family: 'Open Sans', sans-serif;
   color: #696969;
   font-size: 14px;
   display: inline; }
 
 .card-rating {
-  font-family: 'Open Sans', sans-serif;
   color: #696969;
   font-size: 14px;
   display: inline;
@@ -177,12 +180,10 @@ body {
   display: table; }
 
 .card-text {
-  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   margin: 10px 0; }
 
 .card-text2 {
-  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   margin: 10px 0 30px 0; }
 
@@ -196,25 +197,78 @@ body {
   font-weight: 300;
   color: #1C1C1C;
   position: absolute;
-  right: 3%;
-  top: 5%; }
+  right: 3%; }
 
 .modal-header {
   border-bottom: none;
   padding-left: 0;
   padding-bottom: 5px; }
 
-.modal-title {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 25px; }
-
 .modal-content {
   padding: 20px 40px; }
 
+.modal-info {
+  width: 90%;
+  margin: auto;
+  padding-top: 15px; }
+
+.modal-info-left {
+  border-right: 0.5px solid #696969; }
+
+.modal-info-text {
+  margin: 10%; }
+
+.modal-title {
+  font-size: 25px; }
+
+.modal-heading {
+  font-size: 20px; }
+
 .modal-subheading {
-  font-family: 'Open Sans', sans-serif;
   color: #696969;
-  font-size: 14px; }
+  font-size: 14px;
+  margin-bottom: 10px; }
+
+.modal-info-heading {
+  font-size: 18px;
+  margin-top: 40px; }
+
+.modal-info-body {
+  color: #696969;
+  font-size: 14px;
+  padding-right: 40px; }
+
+.modal-book-bold {
+  font-size: 20px;
+  font-weight: bold;
+  display: inline; }
+
+.modal-book-body {
+  display: inline;
+  font-size: 18px; }
+
+.modal-book-Lbody {
+  color: #696969; }
+
+.modal-menu-title {
+  color: #696969;
+  display: inline;
+  font-size: 16px; }
+
+.modal-menu-body {
+  display: inline;
+  font-size: 18px; }
+
+.modal-menu-bodyR {
+  display: inline;
+  font-size: 18px;
+  float: right;
+  margin: 0; }
+
+.modal-menu-bodyR::after {
+  content: "";
+  clear: both;
+  display: table; }
 
 .carousel-inner {
   margin: 30px 0; }
@@ -223,7 +277,6 @@ body {
   width: 100%;
   padding: 0 15%;
   height: 30%;
-  max-height: 280px;
   overflow: hidden; }
 
 .carousel-next {
