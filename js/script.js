@@ -1,5 +1,15 @@
 console.log('100% Pure Accommodation');
 
+//Google Maps ------------------------------------------------------------------
+
+// Accessiing apiKey from config.json
+// var myKey = JSON.parse(apiKey);
+//  console.log (myKey[0].key);
+//
+//  var script = document.createElement('script');
+//  script.src = 'https://maps.googleapis.com/maps/api/js?key=' + myKey[0].key + '&callback=initMap';
+//  document.getElementsByTagName('body')[0].appendChild(script);
+
 // Swiper Carousel JS ----------------------------------------------------------
 
 var swiper = new Swiper('.swiper-container', {
@@ -27,8 +37,7 @@ var locations = [
     name: "Nomads Capital Hostel",
     city: "Wellington",
     address: "118/120 Wakefield Street, Te Aro, Wellington 6011",
-    lat: -41.289630,
-    long: 174.776860,
+    longAndLat: {lat: -41.289630, lng: 174.776860 },
     type: "Hostel | Wellington",
     guestMax: 1,
     guestMin: 1,
@@ -45,8 +54,7 @@ var locations = [
     name:  "Rydges Wellington",
     city: "Wellington",
     address: "75 Featherston Street, Pipitea, Wellington 6011" ,
-    lat:  -41.280860,
-    long: 174.778720,
+    longAndLat: {lat:  -41.280860, lng: 174.778720 },
     type: "Hotel | Wellington",
     guestMax: 2,
     guestMin: 1,
@@ -63,8 +71,7 @@ var locations = [
     name: "Beautiful Colonial House",
     city: "Wellington",
     address: "30 Campbell Street, Karori, Wellington, 6012",
-    lat: -41.286430 ,
-    long: 174.739750,
+    longAndLat: {lat: -41.286430 , lng: 174.739750 },
     type: "House | Wellington",
     guestMax: 4,
     guestMin: 1,
@@ -81,8 +88,7 @@ var locations = [
     name: "Victoria Court Lodge",
     city: "Wellington",
     address: "201 Victoria Street, Te Aro, Wellington 6011",
-    lat: -41.293540,
-    long: 174.773640,
+    longAndLat: {lat: -41.293540, lng: 174.773640 },
     type: "Motel | Wellington",
     guestMax: 4,
     guestMin: 2,
@@ -99,8 +105,7 @@ var locations = [
     name: "Queen Street Backpackers",
     city: "Auckland",
     address: "4 Fort Street, Auckland CBD, Auckland 1010",
-    lat: -36.845850,
-    long: 174.766990,
+    longAndLat: {lat: -36.845850, lng: 174.766990 },
     type: "Hostel | Auckland",
     guestMax: 1,
     guestMin: 1,
@@ -117,8 +122,7 @@ var locations = [
     name: "Hotel Grand Chancellor" ,
     city: "Auckland",
     address: "1 Hobson Street, Auckland CBD, Auckland 1010",
-    lat:  -36.845030,
-    long: 174.762570,
+    longAndLat: {lat:  -36.845030, lng: 174.762570 },
     type: "Hotel | Auckland",
     guestMax: 2,
     guestMin: 1,
@@ -135,8 +139,7 @@ var locations = [
     name: "Freemans Bay Cottage",
     city: "Auckland",
     address: "25 Georgina Street, Freemans Bay, Auckland 1011",
-    lat: -36.849430,
-    long: 174.747570,
+    longAndLat: {lat: -36.849430, lng: 174.747570 },
     type: "House | Auckland",
     guestMax: 4,
     guestMin: 1,
@@ -153,8 +156,7 @@ var locations = [
     name: "Auckland Rose Park Hotel",
     city: "Auckland",
     address: "92-102 Gladstone Road, Parnell, Auckland 1010",
-    lat: -36.851260,
-    long: 174.785850,
+    longAndLat: {lat: -36.851260, lng: 174.785850 },
     type: "Motel | Auckland",
     guestMax: 4,
     guestMin: 2,
@@ -171,8 +173,7 @@ var locations = [
     name: "Lakefront Backpackers",
     city: "Queenstown" ,
     address: "88-90 Lake Esplanade, Queenstown 9300" ,
-    lat: -45.036680,
-    long: 168.649410,
+    longAndLat: {    lat: -45.036680, lng: 168.649410 },
     type: "Hostel | Queenstown",
     guestMax: 1,
     guestMin: 1,
@@ -189,8 +190,7 @@ var locations = [
     name:  "Millennium Hotel",
     city: "Queenstown" ,
     address: "32 Frankton Road, Queenstown 9300",
-    lat:  -45.033790,
-    long: 168.667080,
+    longAndLat: {lat:  -45.033790, lng: 168.667080 },
     type: "Hotel | Queenstown",
     guestMax: 2,
     guestMin: 1,
@@ -207,8 +207,7 @@ var locations = [
     name: "Modern BelfastHouse",
     city: "Queenstown" ,
     address: "15 Belfast Terrace, Queenstown 9300",
-    lat: -45.029910,
-    long: 168.671040,
+    longAndLat: {lat: -45.029910, lng: 168.671040 },
     type: "House | Queenstown",
     guestMax: 4,
     guestMin: 1,
@@ -225,8 +224,7 @@ var locations = [
     name: "Four Seasons Motel",
     city: "Queenstown",
     address: "12 Stanley Street, Queenstown 9300",
-    lat: -45.033010,
-    long: 168.665170,
+    longAndLat: {lat: -45.033010, lng: 168.665170 },
     type: "Motel | Queenstown",
     guestMax: 4,
     guestMin: 2,
@@ -272,7 +270,10 @@ function dateDiff() {
   //amount of days selected
   console.log(days);
   return days;
+  console.log(start);
+  console.log(end);
 };
+
 
 // Array -----------------------------------------------------------------------
 
@@ -301,8 +302,8 @@ function displayArray(j){
   +      '<p class="card-text">' + locations[j].name + '</p>'
   +      '<p class="card-text2"> $' + locations[j].costPN + 'NZD per night</p>'
   // +      '<button type="button" onClick="reveal(this.id)" id="'+locations[j].id+'" class="btn btn-primary card-button" data-toggle="modal" data-target=".modal">View More</button>'
-  + '<button type="button" class="btn btn-primary card-button" id="'+ locations[j].id +'" onclick="reveal(this.id)" \
-    data-toggle="modal" data-target="#myModal">Read more'+'</button>'
+  + '<button type="button" class="btn btn-primary card-button button" id="'+ locations[j].id +'" onclick="reveal(this.id)" \
+    data-toggle="modal" data-target="#myModal">View more'+'</button>'
   +    '</div>'
   +  '</div>'
   +'</div>'
@@ -334,13 +335,10 @@ function getSelectValue(){
   var selectedValue = document.getElementById("hungry").value;
   console.log(selectedValue);
 };
-getSelectValue();
+// getSelectValue();
 
 //Modal ------------------------------------------------------------------------
 
-// $('#myModal').on('shown.bs.modal', function () {
-//   $('#myInput').trigger('focus')
-// })
 
 function reveal(clicked_id){
   $('#displayModal').show();
@@ -358,6 +356,7 @@ function reveal(clicked_id){
      // console.log(g);
     };
 };
+
 
 function displayModal(j){
 document.getElementById('displayModal').innerHTML
@@ -403,12 +402,13 @@ document.getElementById('displayModal').innerHTML
 +          '<p class="modal-info-body">Tea and coffee facilities in studio with ensuite style bathroom which includes shower, toilet, vanity. Internet and free view TV supplied. There is closet space for clothes and belongings. Off street parking can be supplied if required. No laundry facilities in studio but can be arranged in the main house.</p>'
 +        '</div>'
 +        '<div class="modal-info-right col-5">'
-+          '<button type="button" class="button-book" name="button">Book Now</button>'
+// +          '<button type="button" class="button button-book" data-toggle="secondModal" data-dismiss="modal" data-target="#secondModal" name="button">Book Now</button>'
++ '<button type="button" class="btn btn-primary" data-toggle="secondmodal" data-target="#secondaryModal">Book Now </button>'
 +          '<div class="modal-info-text">'
 +            '<p class="modal-book-bold">' + locations[j].costPN + ' NZD</p> <p class="modal-book-body"> per night</p>'
-+            '<p class="modal-book-Lbody">Nov 26 - Nov 29 | 2 Guests </p>'
++            '<p class="modal-book-Lbody"> | 2 Guests </p>'
 +            '<br>'
-+            '<p class="modal-book-body">Total</p><p class="modal-menu-bodyR">'+test*totalPeople+'</p>'
++            '<p id="bookBtn" class="modal-book-body">Total</p><p class="modal-menu-bodyR">'+test*totalPeople+'</p>'
 +            '<br>'
 +            '<br>'
 // +            '<p class="modal-menu-title">Optional</p> <br>'
@@ -416,22 +416,26 @@ document.getElementById('displayModal').innerHTML
 // +            '<p class="modal-menu-body">Lunch</p> <p class="modal-menu-bodyR">$30/day</p> <br>'
 // +            '<p class="modal-menu-body">Dinner</p> <p class="modal-menu-bodyR">$30/day</p> <br>'
 // +            '<p class="modal-menu-body">All</p> <p class="modal-menu-bodyR">$75/day</p> <br>'
-+'<select class="custom-select" id="hungry" onchange="getSelectValue()"><option value="60" >Option One $60</option><option value="80">Option Two $80</option\
-    ><option value="120">Option Three $120</option>'+'</select>'
++'<select class="custom-select" id="hungry" onchange="getSelectValue()"><option value="0" >None</option><option value="30">Breakfast $30</option><option value="30">Lunch $30</option><option value="30">Dinner $30</option><option value="75">All $75</option></select>'
 +        '</div>'
 +      '</div>'
-+      '</div>'
+// +            '<div class="modal-map">'
+// +                '<div id="map">'
+// +
+// +                '</div>'
+// +                '</div>'
++'</div>'
 +'</div>'
 +'</div>'
 +'</div>'
 +'</div>'
 
-getSelectValue();
+// initMap();
+// getSelectValue();
 };
 
 
 var test;
-
 
 function getSelectValue(){
   var selectedValue = document.getElementById("hungry").value;
@@ -442,17 +446,90 @@ function getSelectValue(){
 };
 getSelectValue();
 
+// Secondary Modal
 
-
-//Google Maps ------------------------------------------------------------------
-
-// Accessiing apiKey from config.json
-// var myKey = JSON.parse(apiKey);
-//  console.log (myKey[0].key);
+// function displayModal(j){
 //
-// function initMap() {
-//   var wellington = {lat: -41.286461, lng: 174.776230};
-//   var map = new google.maps.Map(
-//       document.getElementById('map'), {zoom: 14, center: wellington});
-//   var marker = new google.maps.Marker({position: wellington, map: map});
-// }
+// document.getElementById('displayModal').innerHTML
+// +=
+// getSelectValue();
+// };
+
+
+// Secondary Modal -------------------------------------------------------------
+
+function revealSecondary(clicked_id){
+  $('#bookBtn').show();
+  var id = clicked_id;
+  console.log(typeof(clicked_id));
+  document.getElementById('secondaryModal').innerHTML = '';
+    for (var g = 0; g < locations.length; g++) {
+      console.log(typeof(locations[g].id));
+        // console.log(locations.length);
+        if (parseInt(clicked_id) === locations[g].id) {
+          // clearModal();
+           displaySecondaryModal(g);
+           console.log('ok');
+     }
+     // console.log(g);
+    };
+};
+
+function displaySecondaryModal(j){
+document.getElementById('secondaryModal').innerHTML
++= '<div class="modal2 fade secondModal" id="secondModal" tabindex="-1" role="dialog" aria-labelledby="secondModal" aria-hidden="true">'
++  '<div class="modal-dialog" role="document">'
++    '<div class="modal-content">'
++      '<div class="modal-header">'
++        '<h5 class="modal-title" id="exampleModalLabel">' + locations[j].name+ '</h5>'
++        '<button type="button" class="close" data-dismiss="modal2" aria-label="Close">'
++          '<span aria-hidden="true">&times;</span>'
++        '</button>'
++      '</div>'
++    '</div>'
++  '</div>'
++'</div>'
+};
+
+
+// Google Map ------------------------------------------------------------------
+
+
+function initMap() {
+  var map = new google.maps.Map(
+      document.getElementById('map'), {
+        zoom: 6,
+        center: {lat: -41.3052685, lng: 175.7267386}
+      });
+
+
+
+      for (var i = 0; i < locations.length; i++) {
+      if (this.id === locations[i].ref) {
+      var marker = new google.maps.Marker({
+        position: locations[i].longAndLat,
+        map: map,
+        title: locations[i].name
+      });
+
+    //   var contentString = '<div id="content">'+
+    //               '<div id="siteNotice">'+
+    //               '</div>'+
+    //               '<h1 id="firstHeading" class="firstHeading">'+ locations[i].name+'</h1>'+
+    //               '<div id="bodyContent">'+
+    //               '<h6>'+ locations[i].type +' </h6>'+
+    //               '</div>'+
+    //               '</div>';
+    //
+    //
+    //
+    //   marker.addListener('click', function() {
+    //     infowindow.open(map, marker);
+    //   });
+    //
+    // var infowindow = new google.maps.InfoWindow({
+    //   content: contentString
+    // });
+    }
+  }
+}

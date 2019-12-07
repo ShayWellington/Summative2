@@ -37,6 +37,10 @@
   margin-bottom: 30px;
   font-size: 18px; }
 
+.button:hover {
+  background-color: #387187;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
+
 html, body {
   position: relative;
   height: 100%;
@@ -281,6 +285,21 @@ body {
 
 .carousel-next {
   color: pink; }
+
+#secondaryModal {
+  width: 300px;
+  height: 500px;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  background: green; }
+
+.booking-image {
+  height: 100%;
+  width: 30%;
+  overflow: hidden;
+  float: right; }
 
 .map {
   margin: 30px 30px; }
