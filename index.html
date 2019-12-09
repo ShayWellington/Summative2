@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>100% Pure Accommodation</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
@@ -52,6 +52,13 @@
           <option value="4">4</option>
         </select>
       </div>
+      <div class="food-select">
+        <div class="form-check form-check-inline checkbox form-control-lg">
+          <label class="form-check-label"><input id="breakfast" class="food-checkbox form-check-input" type="checkbox" value="15">Breakfast</label>
+          <label class="form-check-label"><input id="lunch" class="food-checkbox form-check-input" type="checkbox" value="15">Lunch</label>
+          <label class="form-check-label"><input id="dinner" class="food-checkbox form-check-input" type="checkbox" value="15">Dinner</label>
+      </div>
+    </div>
       <button type="button" id="calcDate" class="button form-button" value="Search"> Search </button>
     </form>
 
@@ -101,12 +108,12 @@
 
       <!-- Activities Div -->
 
-      <div class="activities" id="activitiesSection">
+      <!-- <div class="activities" id="activitiesSection">
         <h1 class="page-heading"> <i class="fas fa-map-signs"></i> Activities</h1>
       </div>
 
       <div class="secondaryModal">
-      </div>
+      </div> -->
 
       <!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#secondModal">
@@ -133,6 +140,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://kit.fontawesome.com/69bb8529b7.js" crossorigin="anonymous"></script>
     <!-- <script src="js/config.json"></script> -->
     <script src="js/script.js"></script>

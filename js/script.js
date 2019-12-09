@@ -238,16 +238,19 @@ var locations = [
   },
 ]
 
+var people;
+var days;
+var foodSum = 0;
+var start;
+var end;
 // Date Picker -----------------------------------------------------------------
 
 $("#startDate").datepicker({
-
   dateFormat: 'yy-mm-dd',
   changeMonth: true,
   minDate: new Date(),
   maxDate: '+1y',
   onSelect: function(date){
-
       var selectedDate = new Date(date);
       var msecsInADay = 86400000;
       var stDate = new Date(selectedDate.getTime() + msecsInADay);
@@ -264,14 +267,13 @@ $("#endDate").datepicker({
 
 //Find the number of days between dates
 function dateDiff() {
-  var start = $('#startDate').datepicker('getDate');
-  var end = $('#endDate').datepicker('getDate');
-  var days   = (end - start)/1000/60/60/24;
+  start = $('#startDate').datepicker('getDate');
+  end = $('#endDate').datepicker('getDate');
+  days   = (end - start)/1000/60/60/24;
   //amount of days selected
   console.log(days);
   return days;
-  console.log(start);
-  console.log(end);
+
 };
 
 
@@ -309,11 +311,20 @@ function displayArray(j){
   +'</div>'
 };
 
-
-
-var totalPeople;
+var foodValue;
+// var totalPeople;
 document.getElementById('calcDate').addEventListener('click',function(){
-  var people = document.getElementById('people').value;
+  people = parseInt(document.getElementById('people').value);
+   var checkboxArray = document.querySelectorAll('input[type=checkbox]:checked');
+  console.log(checkboxArray);
+  foodSum = 0;
+  var foodValue = 0;
+  for (var i = 0; i < checkboxArray.length; i++) {
+    foodValue = parseInt(checkboxArray[i].value);
+    console.log(foodValue);
+    foodSum = foodSum + foodValue;
+    console.log(foodSum);
+  }
   var days = dateDiff();
   console.log(people);
   console.log(days);
@@ -331,14 +342,15 @@ document.getElementById('calcDate').addEventListener('click',function(){
 
 // Price Calc ------------------------------------------------------------------
 
-function getSelectValue(){
-  var selectedValue = document.getElementById("hungry").value;
-  console.log(selectedValue);
-};
+// function getSelectValue(){
+//   var selectedValue = document.getElementById("hungry").value;
+//   console.log(selectedValue);
+// };
 // getSelectValue();
 
 //Modal ------------------------------------------------------------------------
-
+var totalPrice = 0;
+var checkboxArray = [];
 
 function reveal(clicked_id){
   $('#displayModal').show();
@@ -351,14 +363,18 @@ function reveal(clicked_id){
         if (parseInt(clicked_id) === locations[g].id) {
           // clearModal();
            displayModal(g);
-           console.log('ok');
      }
      // console.log(g);
     };
 };
 
 
+
+
 function displayModal(j){
+  totalPrice = (locations[j].price + foodSum) * days;
+  console.log(locations[j].costPN);
+  console.log(people * locations[j].costPN);
 document.getElementById('displayModal').innerHTML
 += '<div id="myModal" class="modal" tabindex="-1" role="dialog">'
 +  '<div class="modal-dialog modal-xl" role="document">'
@@ -402,93 +418,23 @@ document.getElementById('displayModal').innerHTML
 +          '<p class="modal-info-body">Tea and coffee facilities in studio with ensuite style bathroom which includes shower, toilet, vanity. Internet and free view TV supplied. There is closet space for clothes and belongings. Off street parking can be supplied if required. No laundry facilities in studio but can be arranged in the main house.</p>'
 +        '</div>'
 +        '<div class="modal-info-right col-5">'
-// +          '<button type="button" class="button button-book" data-toggle="secondModal" data-dismiss="modal" data-target="#secondModal" name="button">Book Now</button>'
-+ '<button type="button" class="btn btn-primary" data-toggle="secondmodal" data-target="#secondaryModal">Book Now </button>'
++          '<button type="button" class="button button-book" data-toggle="secondModal" data-dismiss="modal" data-target="#secondModal" onClick="sweet();" name="button">Book Now</button>'
 +          '<div class="modal-info-text">'
 +            '<p class="modal-book-bold">' + locations[j].costPN + ' NZD</p> <p class="modal-book-body"> per night</p>'
-+            '<p class="modal-book-Lbody"> | 2 Guests </p>'
++            '<p class="modal-book-Lbody">'+people+' Guests </p>'
 +            '<br>'
-+            '<p id="bookBtn" class="modal-book-body">Total</p><p class="modal-menu-bodyR">'+test*totalPeople+'</p>'
++            '<p id="bookBtn" class="modal-book-body">Total per night</p><p class="modal-menu-boldR">'+((locations[j].costPN + foodSum )* people)+'</p>'
 +            '<br>'
++            '<p id="bookBtn" class="modal-book-body mt-3">Final Total</p><p class="modal-menu-boldR">'+(((locations[j].costPN + foodSum )* people) * days )+'</p>'
 +            '<br>'
-// +            '<p class="modal-menu-title">Optional</p> <br>'
-// +            '<p class="modal-menu-body">Breakfast</p> <p class="modal-menu-bodyR">$30/day</p> <br>'
-// +            '<p class="modal-menu-body">Lunch</p> <p class="modal-menu-bodyR">$30/day</p> <br>'
-// +            '<p class="modal-menu-body">Dinner</p> <p class="modal-menu-bodyR">$30/day</p> <br>'
-// +            '<p class="modal-menu-body">All</p> <p class="modal-menu-bodyR">$75/day</p> <br>'
-+'<select class="custom-select" id="hungry" onchange="getSelectValue()"><option value="0" >None</option><option value="30">Breakfast $30</option><option value="30">Lunch $30</option><option value="30">Dinner $30</option><option value="75">All $75</option></select>'
 +        '</div>'
 +      '</div>'
-// +            '<div class="modal-map">'
-// +                '<div id="map">'
-// +
-// +                '</div>'
-// +                '</div>'
 +'</div>'
 +'</div>'
 +'</div>'
 +'</div>'
 +'</div>'
 
-// initMap();
-// getSelectValue();
-};
-
-
-var test;
-
-function getSelectValue(){
-  var selectedValue = document.getElementById("hungry").value;
-  console.log(selectedValue);
-  var costs = selectedValue;
-  test = costs;
-  console.log(test);
-};
-getSelectValue();
-
-// Secondary Modal
-
-// function displayModal(j){
-//
-// document.getElementById('displayModal').innerHTML
-// +=
-// getSelectValue();
-// };
-
-
-// Secondary Modal -------------------------------------------------------------
-
-function revealSecondary(clicked_id){
-  $('#bookBtn').show();
-  var id = clicked_id;
-  console.log(typeof(clicked_id));
-  document.getElementById('secondaryModal').innerHTML = '';
-    for (var g = 0; g < locations.length; g++) {
-      console.log(typeof(locations[g].id));
-        // console.log(locations.length);
-        if (parseInt(clicked_id) === locations[g].id) {
-          // clearModal();
-           displaySecondaryModal(g);
-           console.log('ok');
-     }
-     // console.log(g);
-    };
-};
-
-function displaySecondaryModal(j){
-document.getElementById('secondaryModal').innerHTML
-+= '<div class="modal2 fade secondModal" id="secondModal" tabindex="-1" role="dialog" aria-labelledby="secondModal" aria-hidden="true">'
-+  '<div class="modal-dialog" role="document">'
-+    '<div class="modal-content">'
-+      '<div class="modal-header">'
-+        '<h5 class="modal-title" id="exampleModalLabel">' + locations[j].name+ '</h5>'
-+        '<button type="button" class="close" data-dismiss="modal2" aria-label="Close">'
-+          '<span aria-hidden="true">&times;</span>'
-+        '</button>'
-+      '</div>'
-+    '</div>'
-+  '</div>'
-+'</div>'
 };
 
 
@@ -512,24 +458,16 @@ function initMap() {
         title: locations[i].name
       });
 
-    //   var contentString = '<div id="content">'+
-    //               '<div id="siteNotice">'+
-    //               '</div>'+
-    //               '<h1 id="firstHeading" class="firstHeading">'+ locations[i].name+'</h1>'+
-    //               '<div id="bodyContent">'+
-    //               '<h6>'+ locations[i].type +' </h6>'+
-    //               '</div>'+
-    //               '</div>';
-    //
-    //
-    //
-    //   marker.addListener('click', function() {
-    //     infowindow.open(map, marker);
-    //   });
-    //
-    // var infowindow = new google.maps.InfoWindow({
-    //   content: contentString
-    // });
     }
   }
 }
+
+// Success Message -------------------------------------------------------------
+
+function sweet(){
+  Swal.fire(
+    'Success!',
+    'Reference #' +  Math.random().toString(24).substring(2, 8),
+    'success'
+  )
+};

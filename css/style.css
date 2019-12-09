@@ -103,7 +103,7 @@ body {
 .form {
   position: absolute;
   z-index: 300;
-  top: 20%;
+  top: 7.5%;
   right: 5%;
   background-color: white;
   padding: 20px 40px;
@@ -137,6 +137,16 @@ body {
   width: 100%;
   height: 30px;
   padding-left: 7px; }
+
+.checkbox {
+  margin-top: 0px;
+  padding-top: 0px; }
+
+.form-check-label {
+  margin: 10px; }
+
+.form-check-label {
+  font-size: 15px; }
 
 .content {
   background-color: white;
@@ -270,6 +280,18 @@ body {
   margin: 0; }
 
 .modal-menu-bodyR::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+.modal-menu-boldR {
+  display: inline;
+  font-size: 18px;
+  font-weight: bold;
+  float: right;
+  margin: 0; }
+
+.modal-menu-boldR::after {
   content: "";
   clear: both;
   display: table; }
